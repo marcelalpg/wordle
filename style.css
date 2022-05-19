@@ -1,10 +1,12 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }    
     
 .header-row {
     width: 100%;
+    height: 8.3vh;
     display: flex;
     border-bottom: #d6dee2;
     border-top: #d6dee2;
@@ -15,38 +17,44 @@
 .icons-left {
     width: 20%;
     color: #000000;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .icons-left-type {
     list-style: none;
     padding-top: 15px;
-    padding-left: 30px;
+    padding-left: 20px;
     display: flex;
     justify-content: flex-start;    
-    gap: 20px;
+    gap: 15px;
 }
 
-h1 {
-    width: 60%;
+.wordle {
+    width: 75%;
     padding-top: 9px;
     text-align: center;
     font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 30px;
+    letter-spacing: -2px;
 }
 
 .icons-right {
     width: 20%;
     color: #000000;
-    font-size: 20px;
+    font-size: 23px;
 }
+
 .icons-right-type {
     list-style: none;
     padding-top: 15px;
-    padding-right: 30px;
+    padding-right: 20px;
     display: flex;
     justify-content: flex-end;
-    gap: 20px;
+    gap: 15px;
 }
+
 main {
     width: auto;
     height: 92vh;
@@ -54,10 +62,10 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 30px;
-    gap: 7px;
+    padding-top: 11px;
+    gap: 5px;
     font-size: 16px;
-    font-weight: 900;
+    font-weight: 600;
     font-family: 'Inter', sans-serif;
     color: #000;
 }
@@ -65,57 +73,37 @@ main {
 .board-row {
     display: flex;
     justify-content: center;
-    gap: 7px;
+    gap: 5px;
 }
 
-.br-cell-wrong {
-    width: 40px;
-    height: 40px;
+.br__cell {
+    width: 54px;
+    height: 54px;
     border-width: 2px;
     border-style: solid;
     border-color: #d6dee2;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #817f7f;
+    color: #000000;
+}
+
+.br__cell--position {
+    border: 2px solid #d8ce42;
+    background-color: #d8ce42;
     color: #ffffff;
 }
 
-.br-cell-position {
-    width: 40px;
-    height: 40px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #d6dee2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #bbb348;
+.br__cell--right {
+    border: 2px solid #468f4c;
+    background-color: #468f4c;
     color: #ffffff;
 }
 
-.br-cell-right {
-    width: 40px;
-    height: 40px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #d6dee2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #5e925c;
+.br__cell--wrong {
+    border: 2px solid #808080;
+    background-color: #808080;
     color: #ffffff;
-}
-
-.br-cell {
-    width: 40px;
-    height: 40px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #d6dee2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .keyboard {
@@ -126,6 +114,10 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 7px;
+    font-size: 13.3px;
+    font-weight: semi-bold;
+    position: fixed;
+    top: 420px;
 }
 
 .keyboard-row {
@@ -136,8 +128,8 @@ main {
 }
 
 .key-cell {
-    width: 37px;
-    height: 48px;
+    width: 41px;
+    height: 59px;
     border-width: 2px;
     border-style: solid;
     border-color: #d6dee2;
@@ -148,9 +140,9 @@ main {
     background-color: #d6dee2;
 }
 
-.key-cell-enter {
+.key-cell-enter, .key-cell-del {
     width: 61px;
-    height: 48px;
+    height: 59px;
     border-width: 2px;
     border-style: solid;
     border-color: #d6dee2;
@@ -159,18 +151,11 @@ main {
     justify-content: center;
     align-items: center;
     background-color: #d6dee2;
+    font-size: 12px;
 }
 
-.key-cell-del {
-    width: 61px;
-    height: 48px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #d6dee2;
-    border-radius: 0.25rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #d6dee2;  
+#backspace {
+    font-size: 25px;
+    color:inherit;
 }
-   
+
